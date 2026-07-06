@@ -98,7 +98,7 @@ export const DATA = {
         'Deployed on Vercel with automated CI/CD and environment variable-based config',
       ],
       github: 'https://github.com/Ishan15coder',
-      liveDemo: '#', // Replace with live URL if available
+      liveDemo: 'https://cureme-eight.vercel.app/',
       tags: ['Next.js', 'TypeScript', 'Firebase', 'Gemini API', 'AI', 'Healthcare'],
       gradient: 'from-indigo-500 via-purple-500 to-cyan-500',
     },
