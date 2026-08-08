@@ -8,7 +8,7 @@ export const DATA = {
     location: 'Ghaziabad, Uttar Pradesh',
     github: 'https://github.com/Ishan15coder',
     linkedin: 'https://www.linkedin.com/in/ishan1545/',
-    resumeUrl: 'https://drive.google.com/file/d/1Q7u0sTnYa5SjyaFOceo7yH_gNPtZYrL2/view?usp=sharing', // Replace with your hosted PDF URL
+    resumeUrl: 'https://drive.google.com/file/d/1gC4I88ogQwUDqqx3SOQ382ee_yVwqNtp/view?usp=sharing',
     summary:
       "I'm a detail-oriented B.Tech Information Technology student with hands-on experience developing and deploying AI-powered full-stack web applications using Next.js, TypeScript, React.js, and Firebase. I've solved 500+ DSA problems and hold three AWS certifications including CloudOps Engineer. I'm passionate about building scalable, user-centric products and actively seeking software engineering internship and entry-level opportunities.",
     tagline: 'Building AI-powered experiences that scale.',
@@ -81,6 +81,27 @@ export const DATA = {
   ],
 
   projects: [
+    {
+      id: 'nexevent',
+      title: 'NexEvent',
+      subtitle: 'Full-Stack Event Booking Platform',
+      description:
+        'A full-stack event booking platform with role-based access control across a React frontend and a RESTful Express API, featuring 2FA via OTP email verification, an Admin Dashboard with real-time queue management, and deployment on Vercel and Render with CI/CD via GitHub.',
+      problem:
+        'Event booking systems often lack secure, role-based workflows and reliable real-time management. NexEvent solves this with JWT-protected endpoints, 2FA authentication flows, and optimistic UI updates to deliver a seamless experience for both users and admins.',
+      technologies: ['React.js', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Nodemailer', 'Render', 'Vercel'],
+      features: [
+        'Built a full-stack event booking platform with role-based access control across a React frontend and a RESTful Express API with 15+ JWT-protected endpoints',
+        'Implemented 2FA via OTP email verification (Nodemailer) securing registration, login, and booking flows',
+        'Built an Admin Dashboard with real-time queue management and optimistic UI updates',
+        'Deployed on Vercel (Frontend) and Render (Backend) with CI/CD via GitHub',
+        'Configured SPA routing and a keep-alive cron job for consistent uptime on the free tier',
+      ],
+      github: 'https://github.com/Ishan15coder/Nexevent',
+      liveDemo: 'https://nexevent-chi.vercel.app/',
+      tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Full-Stack'],
+      gradient: 'from-emerald-500 via-teal-500 to-cyan-500',
+    },
     {
       id: 'curemeai',
       title: 'CureMe AI',
