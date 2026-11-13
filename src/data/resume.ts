@@ -2,7 +2,7 @@ export const DATA = {
   personal: {
     name: 'Ishan Gupta',
     title: 'Full Stack Developer',
-    subtitle: 'B.Tech IT Student · AWS Certified · AI Enthusiast',
+    subtitle: '3rd-Year B.Tech IT Student · AWS Certified · Competitive Programmer',
     email: 'gishan750@gmail.com',
     phone: '+91-9451467338',
     location: 'Ghaziabad, Uttar Pradesh',
@@ -10,8 +10,8 @@ export const DATA = {
     linkedin: 'https://www.linkedin.com/in/ishan1545/',
     resumeUrl: 'https://drive.google.com/file/d/1gC4I88ogQwUDqqx3SOQ382ee_yVwqNtp/view?usp=sharing',
     summary:
-      "I'm a detail-oriented B.Tech Information Technology student with hands-on experience developing and deploying AI-powered full-stack web applications using Next.js, TypeScript, React.js, and Firebase. I've solved 500+ DSA problems and hold three AWS certifications including CloudOps Engineer. I'm passionate about building scalable, user-centric products and actively seeking software engineering internship and entry-level opportunities.",
-    tagline: 'Building AI-powered experiences that scale.',
+      "I'm a third-year B.Tech Information Technology student at KIET and Full Stack Developer with hands-on experience building and deploying scalable web applications using React, Next.js, TypeScript, Node.js, and PostgreSQL. I've solved 700+ DSA problems across Codeforces, CodeChef, and LeetCode, and hold 3 AWS certifications including CloudOps Engineer. Passionate about software engineering, high-performance architectures, and real-world problem solving.",
+    tagline: 'Building scalable, high-performance web systems.',
   },
 
   education: [
@@ -41,36 +41,46 @@ export const DATA = {
     },
   ],
 
+  milestones: [
+    { year: '2022', title: 'Class X', desc: 'Scored 94.8% — built a strong academic and mathematical foundation.' },
+    { year: '2024', title: 'Class XII', desc: 'Scored 86% in Science stream (CBSE) from Kanpur.' },
+    { year: 'Aug 2024', title: 'B.Tech in IT Begins', desc: 'Started Information Technology at KIET Group of Institutions (Current CGPA: 8.29).' },
+    { year: '2025', title: 'AWS Certifications', desc: 'Earned AWS Certified Cloud Practitioner and AWS Certified AI Practitioner.' },
+    { year: '2025', title: 'CureMe AI & NexEvent', desc: 'Developed and shipped an AI healthcare companion and full-stack event ticketing platform.' },
+    { year: '2026', title: 'ICPC India Preliminary 2026', desc: 'Ranked 756 nationwide (3rd among KIET teams) with team "The Recursives" solving 5 problems.' },
+    { year: '2026', title: 'MatchPulse & CloudOps Associate', desc: 'Shipped football analytics simulation platform & achieved AWS Certified CloudOps Engineer – Associate.' },
+  ],
+
   skills: [
     {
       category: 'Programming Languages',
       icon: '💻',
       color: '#6366f1',
-      items: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript'],
+      items: ['C++', 'Java', 'Python', 'JavaScript', 'TypeScript', 'SQL'],
     },
     {
       category: 'Frontend Development',
       icon: '🎨',
       color: '#8b5cf6',
-      items: ['React.js', 'Next.js', 'HTML5', 'CSS3', 'Responsive Design'],
+      items: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'TanStack Query', 'HTML5', 'CSS3', 'Responsive Design'],
     },
     {
       category: 'Backend & APIs',
       icon: '⚙️',
       color: '#06b6d4',
-      items: ['Node.js', 'REST APIs', 'Firebase Authentication', 'Firebase Cloud Firestore'],
-    },
-    {
-      category: 'Cloud & DevOps',
-      icon: '☁️',
-      color: '#10b981',
-      items: ['AWS (EC2, S3, CloudWatch, IAM)', 'Git', 'GitHub', 'CI/CD Pipelines', 'Vercel', 'Netlify'],
+      items: ['Node.js', 'Express.js', 'RESTful APIs', 'Firebase Authentication', 'Firebase Cloud Firestore'],
     },
     {
       category: 'Databases',
       icon: '🗄️',
       color: '#f59e0b',
-      items: ['Firebase Firestore', 'NoSQL'],
+      items: ['PostgreSQL', 'MongoDB', 'SQL', 'Firebase Firestore', 'NoSQL'],
+    },
+    {
+      category: 'Cloud & DevOps',
+      icon: '☁️',
+      color: '#10b981',
+      items: ['AWS (EC2, S3, CloudWatch, IAM)', 'Git', 'GitHub', 'CI/CD Pipelines', 'Vercel', 'Render', 'Netlify'],
     },
     {
       category: 'Core CS Concepts',
@@ -81,6 +91,38 @@ export const DATA = {
   ],
 
   projects: [
+    {
+      id: 'matchpulse',
+      title: 'MatchPulse',
+      subtitle: 'Football Analytics & Monte Carlo Simulation Platform',
+      description:
+        'A football analytics platform that provides statistical insights, league standings, match probability projections, and Monte Carlo-based match simulations across major European football competitions.',
+      problem:
+        'Traditional football stats portals offer static tables without predictive modeling or schedule-aware depth. MatchPulse delivers predictive modeling using Poisson distributions and Monte Carlo simulations alongside custom multi-criteria sorting to evaluate team performance and upcoming fixtures.',
+      technologies: [
+        'React.js',
+        'TypeScript',
+        'Vite',
+        'Tailwind CSS',
+        'TanStack Query',
+        'Node.js',
+        'Express.js',
+        'PostgreSQL',
+      ],
+      features: [
+        'Football analytics across the Premier League, La Liga, Serie A, and Champions League',
+        'Monte Carlo simulations for match outcome projections',
+        'Poisson-based match probability calculations',
+        'Match odds and probability distributions',
+        'League standings and statistical projections',
+        'Custom multi-criteria sorting using kickoff schedules and league standings',
+        'REST APIs with validation and parameterized SQL aggregations',
+      ],
+      github: 'https://github.com/Ishan15coder/MatchPulse15',
+      liveDemo: 'https://match-pulse15.vercel.app',
+      tags: ['React.js', 'TypeScript', 'Node.js', 'Express.js', 'PostgreSQL', 'TanStack Query', 'Full-Stack'],
+      gradient: 'from-blue-600 via-indigo-600 to-cyan-500',
+    },
     {
       id: 'nexevent',
       title: 'NexEvent',
@@ -118,7 +160,7 @@ export const DATA = {
         'Dynamic 3-step onboarding health survey for recommendation personalisation',
         'Deployed on Vercel with automated CI/CD and environment variable-based config',
       ],
-      github: 'https://github.com/Ishan15coder',
+      github: 'https://github.com/Ishan15coder/cureme',
       liveDemo: 'https://cureme-eight.vercel.app/',
       tags: ['Next.js', 'TypeScript', 'Firebase', 'Gemini API', 'AI', 'Healthcare'],
       gradient: 'from-indigo-500 via-purple-500 to-cyan-500',
@@ -149,37 +191,52 @@ export const DATA = {
     },
   ],
 
+  achievements: [
+    {
+      id: 'icpc-2026',
+      title: 'ICPC India Preliminary Contest 2026',
+      event: 'International Collegiate Programming Contest',
+      team: 'The Recursives',
+      overallRank: '756',
+      collegeRank: '3rd among KIET teams',
+      problemsSolved: 5,
+      year: '2026',
+      summary:
+        'Solved 5 algorithmic problems under intense competitive constraints, securing Rank 756 nationwide and placing 3rd among all competing teams from KIET Group of Institutions.',
+    },
+  ],
+
   competitiveProgramming: {
     platforms: [
       {
-        name: 'CodeChef',
-        rating: '1439',
-        badge: '2 Star',
-        detail: 'Maximum rating 1439',
-        icon: '⭐⭐',
-        color: '#f59e0b',
-        url: 'https://www.codechef.com/users/ishan1545',
-      },
-      {
         name: 'Codeforces',
-        rating: '200+',
-        badge: 'Active',
-        detail: '200+ problems solved, consistent rated contest participation',
+        rating: '1250',
+        badge: 'Pupil',
+        detail: 'Pupil (Peak 1250), 200+ problems solved, consistent rated contest participation',
         icon: '🔵',
         color: '#1e40af',
         url: 'https://codeforces.com/profile/Ishan15_45',
       },
       {
+        name: 'CodeChef',
+        rating: '1439',
+        badge: '2 Star',
+        detail: 'Peak rating 1439, 2-Star rated competitive programmer',
+        icon: '⭐⭐',
+        color: '#f59e0b',
+        url: 'https://www.codechef.com/users/ishan1545',
+      },
+      {
         name: 'LeetCode',
-        rating: '500+',
+        rating: '700+',
         badge: 'Multi-platform',
-        detail: '500+ DSA problems solved across LeetCode, CodeChef, and Codeforces',
+        detail: '700+ DSA problems solved across LeetCode, Codeforces, and CodeChef',
         icon: '🟠',
         color: '#ea580c',
         url: 'https://leetcode.com/u/9ki7hjbRKp/',
       },
     ],
-    totalSolved: '500+',
-    highlight: 'Solved 500+ Data Structures and Algorithms problems across LeetCode, CodeChef, and Codeforces.',
+    totalSolved: '700+',
+    highlight: 'Solved 700+ Data Structures and Algorithms problems across Codeforces, CodeChef, and LeetCode.',
   },
 }

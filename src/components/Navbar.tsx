@@ -157,6 +157,14 @@ const Navbar: React.FC = () => {
                   {item.label}
                 </button>
               ))}
+              <a
+                href={`mailto:${DATA.personal.email}`}
+                className="btn-primary"
+                style={{ marginTop: '1rem', justifyContent: 'center', textAlign: 'center', fontSize: '0.85rem' }}
+                onClick={() => setMobileOpen(false)}
+              >
+                Hire me
+              </a>
             </div>
           </motion.div>
         )}

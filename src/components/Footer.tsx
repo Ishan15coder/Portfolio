@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   const borderColor = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(23,24,28,0.08)'
 
   return (
-    <footer style={{ borderTop: `1px solid ${borderColor}`, padding: '3rem 0 2rem' }}>
+    <footer style={{ borderTop: `1px solid ${borderColor}`, padding: 'clamp(2rem, 5vw, 3rem) 0 2rem' }}>
       <div className="container-custom">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '2rem' }}>
 

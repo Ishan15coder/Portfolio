@@ -6,20 +6,11 @@ import { useTheme } from '../context/ThemeContext'
 import { useReducedMotion } from '../hooks/useReducedMotion'
 import { MapPin, Mail, Code, Cloud, Puzzle, Send } from 'lucide-react'
 
-const milestones = [
-  { year: '2022', title: 'Class X', desc: 'Scored 94.8% — built a strong academic foundation.' },
-  { year: '2024', title: 'Class XII', desc: 'Scored 86% in the Science stream (CBSE).' },
-  { year: 'Aug 2024', title: 'B.Tech begins', desc: 'Started Information Technology at KIET Group of Institutions. CGPA 8.29.' },
-  { year: '2025', title: 'AWS certified', desc: 'Earned AWS Cloud Practitioner and AI Practitioner certifications.' },
-  { year: '2025', title: 'CureMe AI shipped', desc: 'Launched an AI health companion with Gemini API, Firebase and Next.js.' },
-  { year: '2026', title: 'CloudOps Engineer', desc: 'Achieved AWS Certified CloudOps Engineer — Associate.' },
-]
-
 const strengths = [
-  { Icon: Code, title: 'Full-stack development', desc: 'React · Next.js · Node.js · Firebase' },
-  { Icon: Cloud, title: 'Cloud & DevOps', desc: '3× AWS certified · CI/CD · Vercel' },
-  { Icon: Puzzle, title: 'Problem solving', desc: '500+ DSA problems across platforms' },
-  { Icon: Send, title: 'Currently seeking', desc: 'SWE internships & entry-level roles' },
+  { Icon: Code, title: 'Full-stack development', desc: 'React · Next.js · Node.js · Express · PostgreSQL' },
+  { Icon: Puzzle, title: 'Problem solving', desc: '700+ DSA · Codeforces Pupil · CodeChef 2★' },
+  { Icon: Cloud, title: 'Cloud & DevOps', desc: '3× AWS certified · CI/CD · Vercel · Render' },
+  { Icon: Send, title: 'Currently seeking', desc: 'SWE internships & full-time roles' },
 ]
 
 const About: React.FC = () => {
@@ -38,13 +29,13 @@ const About: React.FC = () => {
   const borderColor = isDark ? 'rgba(255,255,255,0.09)' : 'rgba(23,24,28,0.1)'
 
   return (
-    <section id="about" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="about" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div {...fadeUp(0)} style={{ marginBottom: '3.5rem' }}>
           <span className="eyebrow" style={{ marginBottom: '1rem', display: 'inline-block' }}>about</span>
           <h2 className="section-title" style={{ color: textColor }}>Who I am</h2>
-          <p className="section-subtitle">A builder who ships production code and treats a leaderboard rating the same way — as evidence, not vibes.</p>
+          <p className="section-subtitle">Third-year B.Tech IT student & full-stack developer dedicated to shipping robust production applications and solving complex algorithmic challenges.</p>
         </motion.div>
 
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }} className="about-grid">
@@ -92,7 +83,7 @@ const About: React.FC = () => {
             </motion.h3>
             <div style={{ position: 'relative', paddingLeft: '2rem' }}>
               <div className="timeline-line" />
-              {milestones.map((m, i) => (
+              {DATA.milestones.map((m, i) => (
                 <motion.div
                   key={m.year + m.title}
                   {...(reduced ? {} : {
@@ -119,10 +110,12 @@ const About: React.FC = () => {
 
       <style>{`
         @media (max-width: 768px) {
-          .about-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .about-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
         }
-        @media (max-width: 480px) {
+        @media (max-width: 520px) {
           .strengths-grid { grid-template-columns: 1fr !important; }
+          .strengths-grid > div { border-right: none !important; border-bottom: 1px solid ${borderColor} !important; }
+          .strengths-grid > div:last-child { border-bottom: none !important; }
         }
       `}</style>
     </section>

@@ -7,7 +7,8 @@ import { useReducedMotion } from '../hooks/useReducedMotion'
 import { useTheme } from '../context/ThemeContext'
 
 const stats = [
-  { label: 'DSA problems', value: '500+' },
+  { label: 'DSA problems', value: '700+' },
+  { label: 'Codeforces (Pupil)', value: '1250' },
   { label: 'CodeChef rating', value: '1439' },
   { label: 'AWS certifications', value: '03' },
   { label: 'CGPA', value: '8.29' },
@@ -37,7 +38,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="hero"
-      style={{ position: 'relative', paddingTop: 128, paddingBottom: 64 }}
+      style={{ position: 'relative', paddingTop: 'clamp(88px, 13vw, 130px)', paddingBottom: 'clamp(36px, 7vw, 64px)' }}
     >
       <div className="container-custom">
         <div style={{ display: 'grid', gridTemplateColumns: '1.15fr 0.85fr', gap: '3.5rem', alignItems: 'center' }} className="hero-grid">
@@ -45,7 +46,7 @@ const Hero: React.FC = () => {
           {/* Text content */}
           <div>
             <motion.div {...fadeUp(0.05)} style={{ marginBottom: '1.5rem' }}>
-              <span className="eyebrow">B.Tech IT · KIET Group of Institutions</span>
+              <span className="eyebrow">3rd-Year B.Tech IT · KIET Group of Institutions</span>
             </motion.div>
 
             <motion.h1
@@ -67,7 +68,7 @@ const Hero: React.FC = () => {
                 color: subColor, marginBottom: '1.5rem',
               }}
             >
-              {DATA.personal.title} <span style={{ color: 'var(--color-accent)' }}>·</span> building AI-backed products, then proving they hold up under load.
+              {DATA.personal.title} <span style={{ color: 'var(--color-accent)' }}>·</span> engineering scalable full-stack applications & algorithmic problem solver.
             </motion.p>
 
             <motion.p
@@ -195,10 +196,11 @@ const Hero: React.FC = () => {
 
       <style>{`
         @media (max-width: 860px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
         }
         @media (max-width: 640px) {
           .hero-ctas, .hero-socials { justify-content: flex-start !important; }
+          .hero-ctas a, .hero-ctas button { flex: 1 1 auto; justify-content: center; }
         }
       `}</style>
     </section>

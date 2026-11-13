@@ -20,7 +20,7 @@ const Skills: React.FC = () => {
     : DATA.skills
 
   return (
-    <section id="skills" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="skills" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div
@@ -76,7 +76,7 @@ const Skills: React.FC = () => {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: gi * 0.06 }}
               style={{
-                padding: '1.75rem',
+                padding: 'clamp(1.15rem, 2.5vw, 1.75rem)',
                 borderRight: gi % 2 === 0 ? `1px solid ${borderColor}` : 'none',
                 borderBottom: `1px solid ${borderColor}`,
               }}
@@ -101,7 +101,8 @@ const Skills: React.FC = () => {
       <style>{`
         @media (max-width: 700px) {
           .skills-grid { grid-template-columns: 1fr !important; }
-          .skills-grid > div { border-right: none !important; }
+          .skills-grid > div { border-right: none !important; border-bottom: 1px solid ${borderColor} !important; }
+          .skills-grid > div:last-child { border-bottom: none !important; }
         }
       `}</style>
     </section>

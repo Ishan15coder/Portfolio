@@ -14,7 +14,7 @@ const Education: React.FC = () => {
   const subColor = isDark ? '#9198A3' : '#565B66'
 
   return (
-    <section id="education" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="education" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div

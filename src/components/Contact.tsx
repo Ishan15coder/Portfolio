@@ -30,8 +30,9 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(form.subject || 'Portfolio Contact')
-    const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`)
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return
+    const subject = encodeURIComponent(form.subject.trim() || `Portfolio Inquiry from ${form.name.trim()}`)
+    const body = encodeURIComponent(`Name: ${form.name.trim()}\nEmail: ${form.email.trim()}\n\n${form.message.trim()}`)
     window.open(`mailto:${DATA.personal.email}?subject=${subject}&body=${body}`)
     setSent(true)
     setTimeout(() => setSent(false), 4000)
@@ -45,7 +46,7 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="contact" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div
@@ -85,7 +86,7 @@ const Contact: React.FC = () => {
                     <Icon size={15} />
                     {label}
                   </span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: textColor, fontFamily: 'IBM Plex Mono, monospace' }}>{value}</span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: 600, color: textColor, fontFamily: 'IBM Plex Mono, monospace', wordBreak: 'break-word', textAlign: 'right' }}>{value}</span>
                 </a>
               ))}
             </div>
@@ -97,7 +98,7 @@ const Contact: React.FC = () => {
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.15 }}
             className="surface"
-            style={{ padding: '2rem' }}
+            style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}
           >
             {sent ? (
               <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>

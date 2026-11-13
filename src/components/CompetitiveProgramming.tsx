@@ -16,14 +16,14 @@ const CompetitiveProgramming: React.FC = () => {
   const borderColor = isDark ? 'rgba(255,255,255,0.09)' : 'rgba(23,24,28,0.1)'
 
   const stats = [
-    { label: 'DSA problems solved', value: '500+' },
+    { label: 'DSA problems solved', value: '700+' },
     { label: 'Codeforces problems', value: '200+' },
-    { label: 'CodeChef max rating', value: '1439' },
-    { label: 'CodeChef rank', value: '2★' },
+    { label: 'Codeforces peak rating', value: '1250' },
+    { label: 'CodeChef peak rating', value: '1439' },
   ]
 
   return (
-    <section id="cp" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="cp" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div
@@ -69,16 +69,16 @@ const CompetitiveProgramming: React.FC = () => {
               initial={reduced ? undefined : { opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
-              className="ledger-row"
+              className="ledger-row cp-platform-row"
               style={{ textDecoration: 'none', cursor: 'pointer' }}
             >
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '1.25rem' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', flexWrap: 'wrap' }}>
                 <span style={{ fontFamily: 'Fraunces, serif', fontWeight: 500, fontSize: '1.15rem', color: textColor }}>
                   {platform.name}
                 </span>
                 <span className="verdict">{platform.badge.toLowerCase()}</span>
               </div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.85rem' }}>
                 <span style={{ color: subColor, fontSize: '0.82rem', maxWidth: 340, textAlign: 'right', display: 'none' }} className="cp-detail">{platform.detail}</span>
                 {platform.rating !== platform.badge && (
                   <span className="ledger-figure" style={{ fontSize: '1.2rem', color: 'var(--color-accent)' }}>{platform.rating}</span>
@@ -94,6 +94,13 @@ const CompetitiveProgramming: React.FC = () => {
         @media (max-width: 700px) {
           .cp-stats { grid-template-columns: repeat(2, 1fr) !important; }
           .cp-stats > div:nth-child(2) { border-right: none !important; }
+          .cp-stats > div:nth-child(1), .cp-stats > div:nth-child(2) { border-bottom: 1px solid ${borderColor} !important; }
+        }
+        @media (max-width: 440px) {
+          .cp-stats { grid-template-columns: 1fr !important; }
+          .cp-stats > div { border-right: none !important; border-bottom: 1px solid ${borderColor} !important; }
+          .cp-stats > div:last-child { border-bottom: none !important; }
+          .cp-platform-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; }
         }
         @media (min-width: 640px) {
           .cp-detail { display: block !important; }

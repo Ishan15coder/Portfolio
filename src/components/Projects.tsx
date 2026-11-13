@@ -33,7 +33,7 @@ const Projects: React.FC = () => {
   })
 
   return (
-    <section id="projects" ref={ref} style={{ padding: '6rem 0' }}>
+    <section id="projects" ref={ref} className="section-padding">
       <div className="container-custom">
 
         <motion.div
@@ -47,7 +47,7 @@ const Projects: React.FC = () => {
           <p className="section-subtitle" style={{ marginBottom: '1.75rem' }}>Production applications, not tutorials.</p>
 
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', alignItems: 'center' }}>
-            <div style={{ position: 'relative', maxWidth: 280 }}>
+            <div style={{ position: 'relative', maxWidth: 280, width: '100%' }} className="project-search-wrap">
               <Search size={14} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: subColor }} />
               <input
                 id="project-search"
@@ -113,11 +113,11 @@ const Projects: React.FC = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="surface"
-                style={{ padding: '2rem' }}
+                style={{ padding: 'clamp(1.25rem, 3vw, 2rem)' }}
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
                   <div>
-                    <h3 style={{ fontFamily: 'Fraunces, serif', fontWeight: 500, fontSize: '1.4rem', color: textColor, marginBottom: '0.3rem' }}>
+                    <h3 style={{ fontFamily: 'Fraunces, serif', fontWeight: 500, fontSize: 'clamp(1.2rem, 2.5vw, 1.45rem)', color: textColor, marginBottom: '0.3rem' }}>
                       {project.title}
                     </h3>
                     <p style={{ color: subColor, fontSize: '0.9rem' }}>{project.subtitle}</p>
@@ -131,13 +131,13 @@ const Projects: React.FC = () => {
 
                 {/* Spec rows */}
                 <div style={{ borderTop: `1px solid ${borderColor}`, marginBottom: '1.5rem' }}>
-                  <div style={{ display: 'flex', gap: '1rem', padding: '0.9rem 0', borderBottom: `1px solid ${borderColor}` }}>
+                  <div style={{ display: 'flex', gap: '1rem', padding: '0.9rem 0', borderBottom: `1px solid ${borderColor}` }} className="project-spec-row">
                     <span style={{ width: 90, flexShrink: 0, fontFamily: 'IBM Plex Mono, monospace', fontSize: '0.72rem', color: subColor, textTransform: 'uppercase', letterSpacing: '0.05em' }}>stack</span>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                       {project.technologies.map(tech => <span key={tech} className="tag">{tech}</span>)}
                     </div>
                   </div>
-                  <div style={{ display: 'flex', gap: '1rem', padding: '0.9rem 0' }}>
+                  <div style={{ display: 'flex', gap: '1rem', padding: '0.9rem 0' }} className="project-spec-row">
                     <span style={{ width: 90, flexShrink: 0, fontFamily: 'IBM Plex Mono, monospace', fontSize: '0.72rem', color: subColor, textTransform: 'uppercase', letterSpacing: '0.05em' }}>problem</span>
                     <p style={{ color: subColor, fontSize: '0.85rem', lineHeight: 1.7 }}>{project.problem}</p>
                   </div>
@@ -174,7 +174,7 @@ const Projects: React.FC = () => {
                   )}
                 </AnimatePresence>
 
-                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }} className="project-actions">
                   <a
                     href={project.github}
                     target="_blank"
@@ -207,6 +207,21 @@ const Projects: React.FC = () => {
           </div>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .project-search-wrap { max-width: 100% !important; }
+        }
+        @media (max-width: 540px) {
+          .project-spec-row { flex-direction: column !important; align-items: flex-start !important; gap: 0.35rem !important; }
+          .project-spec-row > span { width: auto !important; }
+          .project-actions { width: 100%; }
+          .project-actions a { flex: 1 1 calc(50% - 0.5rem); justify-content: center; }
+        }
+        @media (max-width: 360px) {
+          .project-actions a { flex: 1 1 100% !important; }
+        }
+      `}</style>
     </section>
   )
 }
